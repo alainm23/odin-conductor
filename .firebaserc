@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dirceturcuscoapp": {
+      "hosting": {
+        "app": [
+          "dirceturcuscoapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sisa-accesorios"
+  }
+}

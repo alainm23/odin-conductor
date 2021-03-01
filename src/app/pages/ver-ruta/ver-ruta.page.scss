@@ -1,0 +1,155 @@
+@font-face{
+    font-family: AvenirMedium;
+    src : url('/assets/font/AvenirLTStd-Medium.otf')
+}
+@font-face{
+    font-family: AvenirLight;
+    src : url('/assets/font/Avenir-Light.ttf')
+}
+ion-content
+{
+    --padding-start: 30px;
+    --padding-end: 30px;
+    --padding-top: 30px;
+    --padding-bottom: 30px;
+    position: relative;
+}
+.btn_llamada
+{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    float: right;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #C9C9C9;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    ion-icon
+    {
+        color: #707070;
+        font-size: 1.5625rem;
+    }
+}
+.hora
+{
+    font-size: 2.1875rem;
+    color: #6E6E6E;
+    font-family: AvenirMedium;
+    margin-bottom: 0;
+}
+.fecha
+{
+    color: #6E6E6E;
+    font-family: AvenirMedium;
+    margin-top: 0;
+}
+.font_cliente
+{
+    color: #6E6E6E;
+    font-family: AvenirLight;
+    margin-top: 0;
+}
+.font_subtitulo
+{
+    color: #6E6E6E;
+    font-family: AvenirMedium;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.5625rem;
+}
+ion-item
+{
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    .div_circulo
+    {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: #8E8E8E;
+        display: flex;
+        text-align: center;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        font-family: AvenirMedium;
+    }
+    .color_iguales
+    {
+        color: #6E6E6E;
+        font-size: 0.875rem;
+        .font_medium
+        {
+            font-family: AvenirMedium; 
+        }
+        .font_ligth
+        {
+            font-family: AvenirLight;
+        }
+    }
+}
+ion-toolbar
+{
+    background-color: #014A74;
+    --padding-top: 4px;
+    height: 65px;
+    ion-button
+    {
+        --background: #fff;
+        --border-radius: 19px;
+        border-radius: 19px;
+        --color: #6E6E6E;
+        font-family: AvenirMedium; 
+        font-size: 18px;
+        width: 70%;
+        --padding-top: 5px;
+        --padding-bottom: 5px;
+        height: 37px;
+    }
+}
+@media (min-width: 640px)
+{
+    
+   .ion_padding_col
+   {
+       padding-left: 7px;
+       padding-right: 7px;
+   }
+   ion-toolbar
+   {
+        --padding-top: 14px;
+        ion-button
+        {
+            width: 40%;
+        }
+   }
+
+}
+@media (min-width: 768px)
+{
+    
+    .btn_llamada
+    {
+        right: 100px;
+        width: 60px;
+        height: 60px;
+        top: 30px;
+        ion-icon
+        {
+            font-size: 1.875rem;
+        }
+    }
+    ion-toolbar
+   {
+        --padding-top: 14px;
+        height: 80px;
+        ion-button
+        {
+            width: 40%;
+            height: 52px;
+            font-size: 25px;
+        }
+   }
+}

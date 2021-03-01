@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="call ()">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="recargar ()">
+      <img style="margin-left: 6px; width: 55%;" src="assets/img/grifo.png" alt="">
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-justify-content-center ion-no-margin">
+      <ion-col size="9" class="ion-text-center">
+        <h6 class="hora">{{ get_hora () }}</h6>
+        <p class="fecha">{{ get_fecha () }}</p>
+      </ion-col>
+      <ion-col size="12" size-md="10">
+        <h5 class="ion-text-center font_subtitulo">Cardex {{ item?.fecha }}</h5>
+        <p class="font_cliente ion-text-center">Lista de clientes</p>
+      </ion-col>
+      <ion-col size="12" size-md="10" class="ion-no-padding">
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="12" size-sm="6" size-lg="5" class="ion_padding_col" *ngFor="let cliente of clientes">
+            <ion-item>
+              <div class="div_circulo ion-margin-start">
+                {{ cliente.orden + 1 }}
+              </div>
+              <p class="ion-margin-start color_iguales"><span class="font_medium">{{ cliente.cliente_nombre }}</span><br><span class="font_ligth">{{ cliente.cliente_direccion }}</span></p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" class="ion-text-center">
+    <ion-button shape="round" (click)="iniciar_carga ()" class="ion-no-margin">
+      Iniciar carga
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

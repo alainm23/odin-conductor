@@ -1,0 +1,41 @@
+@font-face{
+    font-family: AvenirMedium;
+    src : url('/assets/font/AvenirLTStd-Medium.otf')
+}
+@font-face{
+    font-family: AvenirLight;
+    src : url('/assets/font/Avenir-Light.ttf')
+}
+
+#map{
+    width: 100%;
+    height: 100%;
+}
+
+#img_mapa
+{
+	width: 100%;
+	height: 100%;
+}
+
+ion-toolbar
+{
+    --background: #014A74;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    ion-button
+    {
+        height: 40px;
+        --color: #fff;
+        font-family: AvenirMedium; 
+        font-size: 16px;
+        --background: #014A74;
+        --box-shadow: 0px !important;
+        width: 50%;
+    }
+    ion-button.btn_tabs
+    {
+        border-right: 1px solid #fff;
+    }
+    
+}

@@ -1,0 +1,116 @@
+@font-face{
+    font-family: AvenirBlack;
+    src : url('/assets/font/Avenir-Black.otf')
+}
+@font-face{
+    font-family: AvenirMedium;
+    src : url('/assets/font/AvenirLTStd-Medium.otf')
+}
+ion-content
+{
+    --background: #000000d6;
+    opacity: 90%;
+    height: 100vh;
+    text-align: center;
+    --padding-start: 30px;
+    --padding-end: 30px;
+}
+.btn_llamada
+{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  float: right;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #C9C9C9;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  ion-icon
+  {
+    color: #707070;
+    font-size: 1.5625rem;
+  }
+}
+ion-button
+{
+    --background: #ffffff;
+    --color: #6E6E6E;
+    --border-radius: 19px;
+    width: 75%;
+    height: 45px;
+    --color-activated: #6E6E6E;
+    --background-activated:#ffffff;
+
+}
+h6
+{
+    color: #969696;
+    font-family: AvenirBlack;
+    margin-top: 150px;
+    font-size: 25px;
+}
+img
+{
+    width: 40%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+@media (min-width: 640px)
+{
+    h6
+    {
+        font-size: 35px;
+    }
+    img
+    {
+        width: 30%;
+    }
+    ion-button
+    {
+        width: 40%;
+        margin-bottom: 50px;
+    }
+}
+@media (min-width: 768px)
+{
+  .btn_llamada
+  {
+    right: 100px;
+    width: 60px;
+    height: 60px;
+    top: 30px;
+    ion-icon
+    {
+      font-size: 1.875rem;
+    }
+  }
+  img
+  {
+    width: 25%;
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
+  h6
+  {
+      margin-top: 120px;
+  }
+    
+}
+@media (min-width: 1024px)
+{
+
+  img
+  {
+    width: 20%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  h6
+  {
+    font-size: 51px;
+    margin-top: 110px;
+  }
+    
+}

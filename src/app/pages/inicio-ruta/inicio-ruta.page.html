@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="call ()">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="recargar ()">
+      <img style="margin-left: 6px; width: 55%;" src="assets/img/grifo.png" alt="">
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-justify-content-center ion-no-margin">
+      <ion-col size="9" class="ion-text-center">
+        <h6 class="hora">{{ get_hora () }}</h6>
+        <p class="fecha">{{ get_fecha () }}</p>
+      </ion-col>
+      <ion-col size="12" size-md="10">
+        <h5 class="ion-text-center font_subtitulo">Checklist carga</h5>
+        <p class="font_cliente ion-text-center">Informa cuando estes listo</p>
+      </ion-col>
+      <ion-col size="12" size-sm="6" size-lg="5">
+        <button class="btn_inicio_ruta" (click)="inciar_ruta ()">Inicio de ruta</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

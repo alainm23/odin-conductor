@@ -1,0 +1,19 @@
+<ion-content>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="call ()">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div>
+    <h6>Ruta pausada</h6>
+  </div>
+  <div>
+    <img *ngIf="tipo === 'almuerzo'" src="assets/img/MhqMeB.tif@2x.png">
+    <img *ngIf="tipo === 'fallo_mecanico'" src="assets/img/W6xTBh.tif@2x.png">
+    <img *ngIf="tipo === 'accidente'" src="assets/img/HMaD4y.tif@2x.png">
+  </div>
+  <ion-button (click)="submit ()">
+    Volver a la ruta
+  </ion-button>
+  <br>
+</ion-content>

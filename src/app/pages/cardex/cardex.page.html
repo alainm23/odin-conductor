@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="call ()">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div id="img_mapa">
+    <div #map id="map"></div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="ion-no-padding">
+    <ion-row style="color: white" class="ion-align-items-center">
+      <ion-col size="6" class="ion-text-center" (click)="eventos ()">
+        Eventos
+        <!-- <ion-button class="ion-no-margin btn_tabs" (click)="eventos ()">
+          
+        </ion-button> -->
+      </ion-col>
+
+      <ion-col size="6" class="ion-text-center" (click)="accion ()">
+        <div>{{ botton_accion?.text }}</div>
+        <div>{{ item?.cliente_actual?.nombre }}</div>
+        <!-- <ion-button [disabled]="item?.estado === 'finalizado'" (click)="accion ()" class="ion-no-margin">
+          
+        </ion-button> -->
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

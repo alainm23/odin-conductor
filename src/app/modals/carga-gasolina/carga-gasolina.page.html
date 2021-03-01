@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="call ()">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="close ()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-no-margin">
+      <ion-col size="9" class="ion-text-center">
+        <h6 class="hora">{{ get_hora () }}</h6>
+        <p class="fecha">{{ get_fecha () }}</p>
+      </ion-col>
+
+      <ion-col size="12" size-md="10">
+        <form [formGroup]="form">
+          <h5 class="ion-text-center font_subtitulo">Carga de combustible</h5>
+          <ion-select *ngIf="carro_id === ''" formControlName="vehiculo_id" placeholder="Seleccionar Carro" interface="popover" class="color_select_input ion-padding-end" mode="ios">
+            <ion-select-option *ngFor="let item of items" [value]="item.id">
+              {{ item.alias }}
+            </ion-select-option>
+          </ion-select>
+          <ion-input formControlName="kilometraje" type="number" placeholder="Kilometraje actual" class="color_select_input ion-padding-start ion-padding-end"></ion-input>
+          <ion-input formControlName="numero_galones" type="number" placeholder="Cuantos galones se cargo" class="color_select_input ion-padding-start ion-padding-end"></ion-input>
+          <ion-input formControlName="nro_boleta_factura" type="text" placeholder="Nro° de Boleta / Factura" class="color_select_input ion-padding-start ion-padding-end"></ion-input>
+
+          <ion-button size="small" *ngIf="imagen === ''" color="primary" (click)="selectImageSource ()" expand="block">
+            Tomar foto
+          </ion-button>
+
+          <div *ngIf="imagen !== ''" class="ion-text-center" >
+            <img [src]="imagen" style="width: 128px;">
+          </div>
+
+          <div class="ion-text-center"  *ngIf="imagen !== ''">
+            <ion-button (click)="imagen = ''" color="danger" size="small">
+              Eliminar
+            </ion-button>
+          </div>
+        </form>
+      </ion-col>
+
+      <ion-col size="12" size-sm="6" size-lg="4" class="ion-no-padding">
+        <!-- <button class="btn_carga ion-padding-top ion-padding-bottom"></button> -->
+        <ion-button class="ion-button-css" [disabled]="form.invalid || imagen === ''" (click)="presentAlertConfirm ()">Registrar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

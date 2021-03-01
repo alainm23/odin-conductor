@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="call ()">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="recargar ()">
+      <img style="margin-left: 6px; width: 55%;" src="assets/img/grifo.png" alt="">
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-justify-content-center ion-no-margin">
+      <ion-col size="9" class="ion-text-center">
+        <h6 class="hora">{{ get_hora () }}</h6>
+        <p class="fecha">{{ get_fecha () }}</p>
+      </ion-col>
+      <ion-col size="12" size-md="10">
+        <h5 class="ion-text-center font_subtitulo">Hora de inicio de carga: {{ hora_inicio_carga }}</h5>
+      </ion-col>
+
+      <ion-col size="10" size-sm="5" size-md="4" class="ion-text-center ion-margin-bottom">
+        <ion-badge *ngIf="item?.almacen_valido === false" color="danger">Almacen: Carga sin confirmar</ion-badge>
+        <ion-badge *ngIf="item?.almacen_valido === true" color="success">Almacen: Carga confirmada</ion-badge>
+      </ion-col>
+
+      <ion-col size="12" size-md="10" class="ion-no-padding">
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="12" size-sm="10" size-md="11" size-lg="12" class="ion_padding_col">
+            <ng-container *ngIf="productos !== null">
+              <ion-item *ngFor="let producto of productos">
+                <div class="div1">
+                  <ion-checkbox slot="start" [(ngModel)]="producto.checked"></ion-checkbox>
+                </div>
+                <div class="div2">
+                  <ion-label>{{ producto.nombre }}</ion-label>
+                </div>
+                <div class="div3">
+                  <ion-label class="margin_left" style="text-align: end;" slot="end">{{ producto.cantidad }} und.</ion-label>
+                </div>
+              </ion-item>
+            </ng-container>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" class="ion-text-center">
+    <ion-button [disabled]="check_disbled_button () || item?.almacen_valido === false" (click)="finalizar_descarga ()" class="ion-no-margin">
+      Confirmar y finalizar carga
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

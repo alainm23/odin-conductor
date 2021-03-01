@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" color="danger" (click)="rechazo_total ()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="light" (click)="call ()">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-justify-content-center ion-no-margin">
+      <ion-col size="9" class="ion-text-center">
+        <h6 class="hora">{{ get_hora () }}</h6>
+        <p class="fecha">{{ get_fecha () }}</p>
+      </ion-col>
+      <ion-col size="12" size-md="10">
+        <h5 class="ion-text-center font_subtitulo">Hora de inicio de carga: 08:23</h5>
+      </ion-col>
+      <ion-col size="12" size-md="10" class="ion-no-padding">
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="12" size-sm="6" size-lg="5" class="ion_padding_col">
+            <ion-item *ngFor="let producto of items">
+              <ion-checkbox slot="start" [(ngModel)]="producto.checked" [disabled]="producto.estado === 'rechazado_parcial' || producto.estado === 'rechazado_total'"></ion-checkbox>
+              <ion-label>
+                <h2>{{ producto.nombre }}</h2>
+                <p><b>Cantidad:</b> {{ producto.cantidad }}</p>
+                <ion-badge color="warning" *ngIf="producto.estado === 'rechazado_parcial'" (click)="alert_devolucion (producto, producto.estado)">
+                  Rechazo parcial: {{ producto.rechazo_cantidad }}
+                </ion-badge>
+                <ion-badge color="danger" *ngIf="producto.estado === 'rechazado_total'" (click)="alert_devolucion (producto, producto.estado)">
+                  Rechazo total
+                </ion-badge>
+              </ion-label>
+              <ion-button *ngIf="producto.estado === ''" fill="clear" color="dark" slot="end" (click)="eliminar (producto)">
+                <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+              </ion-button>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" class="ion-text-center">
+    <ion-button color="light" size="small" (click)="finalizar_descarga ()">
+      Confirmar y finalizar descarga
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

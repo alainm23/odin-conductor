@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Rechazo de producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label position="stacked">Motivo</ion-label>
+      <ion-textarea formControlName="motivo" row="3"></ion-textarea>
+    </ion-item>
+
+    <ion-item *ngIf="tipo !== 'rechazado_total'">
+      <ion-label position="stacked">Cantidad</ion-label>
+      <ion-input formControlName="cantidad" type="number"></ion-input>
+    </ion-item>
+  </form>
+  <br>
+  <ion-button expand="block" color="green" [disabled]="!form.valid" (click)="submit ()">Guardar</ion-button>
+  <ion-button expand="block" color="danger-" *ngIf="producto.estado !== ''" (click)="eliminar ()">Eliminar</ion-button>
+</ion-content>
